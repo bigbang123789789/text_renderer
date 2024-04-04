@@ -131,6 +131,9 @@ class Render:
     def gen_multi_corpus(self) -> Tuple[PILImage, str, PILImage, PILImage]:
         font_texts: List[FontText] = [it.sample() for it in self.corpus]
 
+        font_texts[1].font=font_texts[0].font
+        font_texts[1].font_path=font_texts[0].font_path
+        
         bg = self.bg_manager.get_bg()
 
         text_color = None
