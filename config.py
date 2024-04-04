@@ -18,14 +18,13 @@ CURRENT_DIR = Path('/content/text_renderer/workspace')
 text_effect_cfg = Effects([
     text_renderer.effect.DropoutRand(p=0.1,dropout_p=(0.1, 0.2)), #Drop pixel
     Curve(p=0.2, period=180, amplitude=(7,8)), # Curve
-    Line(0.1, thickness=(2, 5),line_pos_p=(0, 1, 0, 0, 0, 0, 0, 0, 0, 0)),  #Underline
+    Line(p=0.1, thickness=(2, 5),line_pos_p=(0, 1, 0, 0, 0, 0, 0, 0, 0, 0)),  #Underline
     ImgAugEffect(p=0.1,aug=iaa.GaussianBlur(sigma=(0.5, 0.85))),   #Gaussian Blur
-    Padding(p=1, w_ratio=[0.015, 0.021], h_ratio=[0.3, 0.35], center=True), #Add padding
+    Padding(p=1, w_ratio=[0.015, 0.021], h_ratio=[0.15, 0.16], center=True), #Add padding
 ])
-# bg_effect_cfg = #
 
 extra_text_effect_cfg = Effects([
-    Padding(p=1, w_ratio=[0.015, 0.021], h_ratio=[0.7, 0.75], center=True), #Add padding
+    
 ])
 
 
